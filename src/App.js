@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Header from "./components/Header"
 import Projects from "./pages/Projects"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/projects' component={Projects} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
