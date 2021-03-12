@@ -1,17 +1,20 @@
 import React from "react"
-import images from "../../images/companion-login.JPG"
 
-const Project = () => {
-    console.log(images)
+const Project = (props) => {
     return (
         <div>
+            {props.data.map((value, index) => {
 
-        <p className="text-center"><b>Companion</b> is a pet-based social media app that allows users to create a profile, and post photos and comments. |
-        <a href="https://github.com/alexander-camacho/Companion">Code</a> |
-        <a href="https://frozen-forest-29372.herokuapp.com/ ">Live App
-        <img className = "portfolio-img" src={images} alt="" /></a>
-
-    </p>
+                return (
+                    <div className="text-center container-sm" key={index}>
+                        <b>{value.title}</b> {value.description} |
+                        <a href={value.code}> Github Repo</a> |
+                        <a href={value.live}> Live App
+                        <img className="portfolio-img" src={value.image} alt="" /></a>
+                    </div>
+                )
+            })
+            }
         </div>
     )
 }
