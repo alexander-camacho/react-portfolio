@@ -1,16 +1,17 @@
 import React from "react"
+import "./style.css"
 
 const Project = (props) => {
     return (
-        <div>
+        <div className="container-fluid">
             {props.data.map((value, index) => {
 
                 return (
-                    <div className="text-center container-sm" key={index}>
+                    <div className="text-center" key={index}>
                         <b>{value.title}</b> {value.description} |
-                        <a href={value.code}> Github Repo</a> |
-                        <a href={value.live}> Live App
-                        <img className="portfolio-img" src={value.image} alt="" /></a>
+                        <a className="link" href={value.code}> Github</a> |
+                        <a className="link" href={value.live}> Live App
+                        <img className="img-thumbnail" src={value.image}  alt="app screenshot" /></a>
                     </div>
                 )
             })
